@@ -1,0 +1,66 @@
+<div class="title">
+    <div class="heading">
+        <h1>ALL CONTACT PAGE</h1>
+    </div>
+    <div class="button">
+        <button routerLink="add"><i class="fa-solid fa-user-plus"></i> Add User</button>
+    </div>
+</div>
+<div class="content">
+    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Natus repellat at rerum assumenda necessitatibus harum
+        soluta quae, earum nulla laboriosam voluptatum reprehenderit, eum accusamus dicta. Illum sit suscipit deserunt
+        illo.
+        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Mollitia consequuntur nulla non sed magnam possimus.
+        Atque, aperiam deleniti ducimus, iste distinctio ab inventore dolore magni aut ipsam rerum nam voluptatum. Lorem
+        ipsum dolor sit amet consectetur adipisicing elit. Ea ratione recusandae consectetur quos provident mollitia sed
+        tempora necessitatibus! Vitae dignissimos optio consequatur nulla consectetur deleniti quia quisquam, voluptatum
+        molestias esse! Lorem ipsum, dolor sit amet consectetur adipisicing elit. Magni facere aspernatur similique
+        tempora? Magni recusandae perferendis eveniet. Perspiciatis odit ut cumque quam atque quaerat quae sint maxime
+        veniam. Quasi, alias.
+    </p>
+
+</div>
+ <!-- search -->
+ <div class="d-flex align-items-center m-5" >
+
+    <h4>SEARCH CONTENT:</h4>   <input type="text" class="form-control ms-4 w-75" placeholder="Type Contact Name here" name="search" [(ngModel)]="searchKey" >
+
+</div>
+<!-- cards -->
+
+    <div class="card mb-3 w-50 d-flex"  *ngFor="let contact of AllContact | search:searchKey:'name'">
+        <div class="row g-0 d-flex">
+           <div class="col-md-4 d-flex">
+            <img [src]="contact.photo" alt="..." class="w-75 p-2 m-5">
+           </div>
+          <div class="col-6">
+            <div class="card-body">
+                <div class="details mt-5">
+                    <div class="name w-100">
+                        <h6>Name:{{contact.name}}</h6>
+                      </div>
+                      <div class="mobile">
+                        <h6>Mob:{{contact.mobile}}</h6>
+                      </div>
+                      <div class="email">
+                        <h6>Email:{{contact.email}}</h6>
+                      </div>
+                </div>
+                <div class="actions mt-5">
+                    <div class="view">
+                        <a routerLink="view/{{contact.id}}" class="fa-solid fa-eye"></a>
+                    </div>
+                    <div class="edit"> 
+                        <a routerLink="edit/{{contact.id}}" class="fa-solid fa-pen"></a>
+                    </div>
+                    <div class="delete">
+                        <a routerLink="" class="fa-solid fa-trash" (click)="deletecontact(contact.id)"></a>
+                    </div>
+
+                </div>
+             
+            </div>
+          </div>
+        </div>
+      </div>
+

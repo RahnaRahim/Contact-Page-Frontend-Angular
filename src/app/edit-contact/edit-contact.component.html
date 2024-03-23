@@ -1,0 +1,104 @@
+
+<div class="update-contact">
+    <div class="heading">
+        <h1><i class="fa-solid fa-user-plus"></i>Update Contact Page</h1> 
+     </div>
+     <div class="content">
+         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Est fugiat, sint quo suscipit quasi autem, dolorem placeat laborum consequuntur at fugit unde voluptate dolores. Aspernatur dolor dignissimos quam assumenda mollitia.
+             Lorem ipsum dolor, sit amet consectetur adipisicing elit. Placeat aliquid doloribus quisquam excepturi, iusto labore dignissimos. Iusto, ex. Qui ipsum ut at dolor nisi sit porro in esse id facilis?
+             Lorem ipsum dolor sit amet consectetur, adipisicing elit. Necessitatibus nostrum provident, vero molestias, minima non expedita nobis fuga quo corporis accusamus repellat natus quos porro! Laudantium consequuntur nam maxime libero.
+             Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quam quasi iure a cumque? Magnam velit, nostrum officiis molestias provident soluta ducimus vel, consequatur corporis eos hic saepe laborum sint libero!
+         </p>
+     </div>
+     
+     <!-- User details -->
+     <div class="formss">
+        
+         <div class="user-details mt-5 shadow border rounded p-3 ms-1" >
+            
+             
+              <form  #addUserform="ngForm">
+                <div class="col-lg-8">
+                  <img [src]="contact.photo" class="img-fluid rounded-start w-50" alt="...">
+                </div>
+                <!-- user id -->
+                <div class="form-floating mb-3">
+                    <input type="text" name="id" class="form-control" id="floatingInputId" placeholder="Contact  Id" pattern="[a-zA-Z0-9]*"  #id="ngModel" [(ngModel)]="contact.id" required>
+                    <label for="floatingInputId">Contact Id</label>
+                  </div>
+                  <!-- error msg for id-->
+                  <div class="mb-3 text-danger" *ngIf="id.invalid&&id.touched">
+                    Invalid Id
+                  </div>
+                  <!-- user name -->
+                  <div class="form-floating mb-3">
+                    <input type="text" class="form-control" id="floatingUsername" placeholder="Contact Name" required pattern="[a-zA-Z ]*"  name="name" #name="ngModel" [(ngModel)]="contact.name" >
+                    <label for="floatingUsername">Contact Name</label>
+                  </div>
+                  <!-- error msg for name -->
+                  <div class="mb-3 text-danger"  *ngIf="name.invalid&&name.touched">
+                    Invalid contact name
+                  </div>
+                  <!-- photo -->
+                  <div class="form-floating mb-3">
+                   <input type="url" class="form-control" id="floatingimage" placeholder="Contact image URL" required   name="photo" #photo="ngModel" [(ngModel)]="contact.photo">
+                   <label for="floatingphoto">Contact Image URL</label>
+                 </div>
+                 <!-- error msg for image -->
+                 <div class="mb-3 text-danger" *ngIf="photo.invalid&&photo.touched">
+                   Invalid contact image URL
+                 </div>
+                  <!-- Email -->
+                  <div class="form-floating mb-3">
+                    <input type="email" class="form-control" id="floatingInputEmail" placeholder="Contact Email" email required name="email" #email="ngModel" [(ngModel)]="contact.email">
+                    <label for="floatingInputEmail">Contact Email</label>
+                  </div>
+                  <!-- error message for email -->
+                  <div class="mb-3 text-danger" *ngIf="email.invalid&&email.touched">
+                    Invalid Email
+                  </div>
+                   <!-- Mobile -->
+                   <div class="form-floating mb-3">
+                    <input type="text" class="form-control" id="floatingInputmobile" placeholder="Contact Mobile"  required name="mobile" #mobile="ngModel" [(ngModel)]="contact.mobile" pattern="[0-9]*">
+                    <label for="floatingInputmobile">Contact Mobile</label>
+                  </div>
+                  <!-- error message for mobile -->
+                  <div class="mb-3 text-danger" *ngIf="mobile.invalid&&mobile.touched">
+                    Invalid Mobile Number
+                  </div>
+                   <!-- Company Name-->
+                   <div class="form-floating mb-3">
+                    <input type="text" class="form-control" id="floatingInputcompany" placeholder="Contact Company Name "  required name="company" pattern="[a-zA-Z0-9 -]*" #company="ngModel" [(ngModel)]="contact.company" >
+                    <label for="floatingInputcompany">Contact Company</label>
+                  </div>
+                  <!-- error message for company name -->
+                  <div class="mb-3 text-danger" *ngIf="company.invalid&&company.touched">
+                    Invalid Company Name
+                  </div>
+                   <!-- title-->
+                   <div class="form-floating mb-3" >
+                    <input type="text" class="form-control" id="floatingInputtitle" placeholder="Contact Title"  required name="title" pattern="[a-zA-Z ]*" #title="ngModel" [(ngModel)]="contact.title">
+                    <label for="floatingInputtitle">Contact Title</label>
+                  </div>
+                  <!-- error message for mobile -->
+                  <div class="mb-3 text-danger" *ngIf="title.invalid&&title.touched">
+                    Invalid Title Name
+                  </div>
+                   <!-- buttons -->
+                   <div class="mt-5 text-center">
+                     <button class="btn btn-success ms-2" (click)="updatecontact()" [disabled]="addUserform.invalid" > Update</button>
+                     <button  class="btn btn-warning ms-2" (click)="cancelupdate(contact.id)">Cancel</button>
+                     
+                   </div>
+             </form>
+         
+         </div>
+         
+         
+         
+         
+         
+         
+     </div>
+     
+</div>

@@ -1,0 +1,25 @@
+img{
+    margin: 30px 30px;
+    align-items: center;
+    width: 300px;
+    height: 300px;
+    border-radius: 30%;
+}
+.card{
+    margin: 10px 10px;
+    align-items: center;
+}
+.details{
+    margin-top: 10px 0px;
+    font-family: 'Times New Roman', Times, serif; 
+}
+h5{
+    font-size: 22px;
+    font-weight: 500;
+    margin: 10px 10px;
+}
+h2{
+    font-size: 40px;
+    margin: 0px 0px;
+    font-weight: bold;
+}
